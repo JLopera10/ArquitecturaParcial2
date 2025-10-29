@@ -54,21 +54,31 @@ Esta app tiene tests con pytest, para verificar la API y la lógica, estos son l
 
 ## Ejemplo de Uso con Curl 
 - Verificar funcionamiento de la API
-´´curl -X GET http://127.0.0.1:8000/health´´
+  
+  *curl -X GET http://127.0.0.1:8000/health*
+  
 - Crear una tarea
-´´curl -X POST "http://127.0.0.1:8000/tasks" \
--H "Content-Type: application/json" \
--d '{"title": "Sesion Parcial #2", "description": "Estudiar para el segundo parcial de arquitectura"}'´´
+  
+  *curl -X POST http://127.0.0.1:8000/tasks -H "Content-Type: application/json" -d '{"title": "Sesion Parcial #2", "description": "Estudiar para el segundo parcial de arquitectura", "status": "pending"}'*
+  
 - Listar todas las tareas
-´´curl -X GET http://127.0.0.1:8000/tasks´´
+  
+  *curl -X GET http://127.0.0.1:8000/tasks*
+  
 - Consultar una tarea por ID
-´´curl -X GET http://127.0.0.1:8000/tasks/ID´´ (Reemplazar ID con el id de la tarea)
-- Modificar el titulo/estado de una tarea 
-´´curl -X PUT http://127.0.0.1:8000/tasks/ID \
--H "Content-Type: application/json" \
--d '{
-  "title": "Sesion Parcial #2",
-  "status": "done"
-}'´´ (Reemplazar ID con el id de la tarea)
+  
+  *curl -X GET http://127.0.0.1:8000/tasks/ID*
+
+  (Reemplazar ID con el id de la tarea)
+  
+- Modificar el titulo/estado de una tarea
+  
+  *curl -X PUT http://127.0.0.1:8000/tasks/ID -H "Content-Type: application/json" -d '{"title": "Sesion Parcial #2", "status": "done"}'*
+
+  (Reemplazar ID con el id de la tarea)
+  
 - Eliminar una tarea
-´´curl -X DELETE http://127.0.0.1:8000/tasks/ID´´ (Reemplazar ID con el id de la tarea)
+  
+  *curl -X DELETE http://127.0.0.1:8000/tasks/ID*
+
+  (Reemplazar ID con el id de la tarea)
